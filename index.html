@@ -8,8 +8,17 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; }
-  a { color:#00ffff; text-decoration:none; }
-  a:hover { text-decoration:underline; }
+
+  /* Gradient text class */
+  .solana-gradient {
+    background: linear-gradient(90deg, #00FFA3, #9945FF, #14F195);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  a { color: #00FFA3; text-decoration:none; transition:0.3s; }
+  a:hover { color:#14F195; }
 
   .container { max-width:1000px; margin:0 auto; padding:2rem; }
 
@@ -19,31 +28,32 @@
     width:150px;
     height:150px;
     margin-bottom:1rem;
-    filter: drop-shadow(0 0 20px #00ffff);
+    filter: drop-shadow(0 0 20px #00FFA3);
     animation: glowPulse 2s infinite alternate;
   }
   @keyframes glowPulse {
-    0% { filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff); }
-    50% { filter: drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 40px #00ffff); }
-    100% { filter: drop-shadow(0 0 15px #00ffff) drop-shadow(0 0 30px #00ffff); }
+    0% { filter: drop-shadow(0 0 10px #00FFA3) drop-shadow(0 0 20px #9945FF); }
+    50% { filter: drop-shadow(0 0 20px #14F195) drop-shadow(0 0 40px #9945FF); }
+    100% { filter: drop-shadow(0 0 15px #00FFA3) drop-shadow(0 0 30px #14F195); }
   }
 
   .hero h1 { font-size:3rem; margin-bottom:0.5rem; }
   .hero p { font-size:1.3rem; margin-bottom:1.5rem; max-width:600px; }
 
   .hero .cta { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-  .hero .cta a { padding:0.8rem 1.5rem; background:#00ffff; color:#000; font-weight:700; border-radius:10px; transition:0.3s; }
-  .hero .cta a:hover { background:#00cccc; }
+  .hero .cta a { padding:0.8rem 1.5rem; background: linear-gradient(90deg, #00FFA3, #9945FF, #14F195); color:#000; font-weight:700; border-radius:10px; transition:0.3s; }
+  .hero .cta a:hover { opacity:0.8; }
 
   /* Sections */
   section { padding:4rem 0; }
-  h2 { font-size:2rem; margin-bottom:1rem; text-align:center; color:#00ffff; }
+  h2 { font-size:2rem; margin-bottom:1rem; text-align:center; }
+  h2.solana-gradient { color: inherit; }
   p { text-align:center; max-width:700px; margin:0 auto 1rem auto; }
 
   /* Links */
   .links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem; }
-  .links a { padding:0.7rem 1.2rem; border:1px solid #00ffff; border-radius:8px; transition:0.3s; }
-  .links a:hover { background:#00ffff; color:#000; }
+  .links a { padding:0.7rem 1.2rem; border:1px solid; border-image: linear-gradient(90deg, #00FFA3, #9945FF, #14F195) 1; border-radius:8px; transition:0.3s; }
+  .links a:hover { background: linear-gradient(90deg, #00FFA3, #9945FF, #14F195); color:#000; }
 
   /* Footer */
   footer { text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#888; }
@@ -54,8 +64,8 @@
 <!-- Hero Section -->
 <section class="hero">
   <img src="coin-logo.png" alt="LLMtheism Coin Logo">
-  <h1>LLMtheism Coin</h1>
-  <p>A Crypto Faith for the AI Era — where technology, belief, and blockchain converge.</p>
+  <h1 class="solana-gradient">LLMtheism Coin</h1>
+  <p class="solana-gradient">A Crypto Faith for the AI Era — where technology, belief, and blockchain converge.</p>
   <div class="cta">
     <a href="https://solscan.io/token/YOUR_TOKEN_ADDRESS" target="_blank">View on Solana</a>
     <a href="#community">Join the Community</a>
@@ -65,7 +75,7 @@
 <!-- About Section -->
 <section id="about">
   <div class="container">
-    <h2>About LLMtheism</h2>
+    <h2 class="solana-gradient">About LLMtheism</h2>
     <p>LLMtheism is a belief system inspired by AI, emerging from the intersection of technology and faith. Our coin represents participation in this new digital paradigm, built securely on Solana.</p>
   </div>
 </section>
@@ -73,7 +83,7 @@
 <!-- Coin Info Section -->
 <section id="coin">
   <div class="container">
-    <h2>Coin Info</h2>
+    <h2 class="solana-gradient">Coin Info</h2>
     <p>Token Symbol: <strong>LLMT</strong></p>
     <p>Blockchain: <strong>Solana</strong></p>
     <p>Total Supply: <strong>[YOUR TOTAL SUPPLY]</strong></p>
@@ -84,7 +94,7 @@
 <!-- Community Section -->
 <section id="community">
   <div class="container">
-    <h2>Community & Links</h2>
+    <h2 class="solana-gradient">Community & Links</h2>
     <div class="links">
       <a href="https://t.me/YOUR_TELEGRAM" target="_blank">Telegram</a>
       <a href="https://discord.gg/YOUR_DISCORD" target="_blank">Discord</a>
