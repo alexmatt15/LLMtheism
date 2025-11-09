@@ -30,17 +30,17 @@
 
   .particle {
     position:absolute;
-    background:#00FFA3;
+    background:#fff;
     border-radius:50%;
-    opacity:0.3;
+    opacity:0.2;
     animation:float 20s infinite ease-in-out;
   }
 
   @keyframes float {
-    0%, 100% { transform:translateY(0) translateX(0); opacity:0.3; }
-    25% { transform:translateY(-100px) translateX(50px); opacity:0.6; }
-    50% { transform:translateY(-200px) translateX(-30px); opacity:0.4; }
-    75% { transform:translateY(-100px) translateX(70px); opacity:0.5; }
+    0%, 100% { transform:translateY(0) translateX(0); opacity:0.2; }
+    25% { transform:translateY(-100px) translateX(50px); opacity:0.4; }
+    50% { transform:translateY(-200px) translateX(-30px); opacity:0.3; }
+    75% { transform:translateY(-100px) translateX(70px); opacity:0.35; }
   }
 
   /* Hexagonal Data Grid */
@@ -51,9 +51,9 @@
     width:100%;
     height:100%;
     background-image:
-      linear-gradient(30deg, transparent 48%, rgba(0,255,163,0.03) 48%, rgba(0,255,163,0.03) 52%, transparent 52%),
-      linear-gradient(90deg, transparent 48%, rgba(0,255,163,0.03) 48%, rgba(0,255,163,0.03) 52%, transparent 52%),
-      linear-gradient(150deg, transparent 48%, rgba(0,255,163,0.03) 48%, rgba(0,255,163,0.03) 52%, transparent 52%);
+      linear-gradient(30deg, transparent 48%, rgba(255,255,255,0.02) 48%, rgba(255,255,255,0.02) 52%, transparent 52%),
+      linear-gradient(90deg, transparent 48%, rgba(255,255,255,0.02) 48%, rgba(255,255,255,0.02) 52%, transparent 52%),
+      linear-gradient(150deg, transparent 48%, rgba(255,255,255,0.02) 48%, rgba(255,255,255,0.02) 52%, transparent 52%);
     background-size:40px 70px;
     z-index:1;
     pointer-events:none;
@@ -72,8 +72,8 @@
     left:0;
     width:100%;
     height:3px;
-    background:linear-gradient(to bottom, transparent, #00FFA3, transparent);
-    opacity:0.4;
+    background:linear-gradient(to bottom, transparent, #fff, transparent);
+    opacity:0.15;
     z-index:2;
     pointer-events:none;
     animation:scan 6s linear infinite;
@@ -96,30 +96,30 @@
     padding:2rem; 
   }
 
-  /* Neon Gradient Text */
+  /* Monochrome Gradient Text */
   .neon-text {
-    background:linear-gradient(90deg, #00FFA3, #14F195, #39FF14);
+    background:linear-gradient(90deg, #fff, #ccc, #fff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
-    text-shadow:0 0 30px rgba(0,255,163,0.5);
+    text-shadow:0 0 30px rgba(255,255,255,0.3);
     font-family:'Orbitron', sans-serif;
   }
 
   .glow-text {
-    color:#00FFA3;
-    text-shadow:0 0 20px #00FFA3, 0 0 40px #00FFA3;
+    color:#fff;
+    text-shadow:0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.3);
   }
 
   a { 
-    color:#00FFA3; 
+    color:#fff; 
     text-decoration:none; 
     transition:all 0.3s; 
-    text-shadow:0 0 10px rgba(0,255,163,0.5);
+    text-shadow:0 0 10px rgba(255,255,255,0.3);
   }
   a:hover { 
-    color:#14F195; 
-    text-shadow:0 0 20px #14F195;
+    color:#ccc; 
+    text-shadow:0 0 20px rgba(255,255,255,0.6);
   }
 
   /* Hero Section */
@@ -148,14 +148,15 @@
   .portal-ring {
     position:absolute;
     border-radius:50%;
-    border:2px solid #00FFA3;
-    box-shadow:0 0 30px #00FFA3, inset 0 0 30px rgba(0,255,163,0.3);
+    border:2px solid #fff;
+    box-shadow:0 0 30px rgba(255,255,255,0.3), inset 0 0 30px rgba(255,255,255,0.1);
   }
 
   .ring-1 {
     width:100%;
     height:100%;
     animation:rotateRing 15s linear infinite;
+    opacity:0.4;
   }
 
   .ring-2 {
@@ -164,8 +165,9 @@
     top:10%;
     left:10%;
     animation:rotateRing 25s linear infinite reverse;
-    border-color:#14F195;
-    box-shadow:0 0 25px #14F195, inset 0 0 25px rgba(20,241,149,0.3);
+    border-color:#ccc;
+    box-shadow:0 0 25px rgba(255,255,255,0.25), inset 0 0 25px rgba(255,255,255,0.08);
+    opacity:0.5;
   }
 
   .ring-3 {
@@ -174,8 +176,9 @@
     top:20%;
     left:20%;
     animation:rotateRing 40s linear infinite;
-    border-color:#39FF14;
-    box-shadow:0 0 20px #39FF14, inset 0 0 20px rgba(57,255,20,0.3);
+    border-color:#aaa;
+    box-shadow:0 0 20px rgba(255,255,255,0.2), inset 0 0 20px rgba(255,255,255,0.06);
+    opacity:0.6;
   }
 
   @keyframes rotateRing {
@@ -190,18 +193,18 @@
     width:200px;
     height:200px;
     margin-bottom:2rem;
-    filter:drop-shadow(0 0 30px #00FFA3);
+    filter:drop-shadow(0 0 30px rgba(255,255,255,0.4));
     animation:pulse 3s ease-in-out infinite;
   }
 
   @keyframes pulse {
     0%, 100% { 
       transform:scale(1); 
-      filter:drop-shadow(0 0 30px #00FFA3) drop-shadow(0 0 50px rgba(0,255,163,0.5));
+      filter:drop-shadow(0 0 30px rgba(255,255,255,0.4)) drop-shadow(0 0 50px rgba(255,255,255,0.2));
     }
     50% { 
       transform:scale(1.05); 
-      filter:drop-shadow(0 0 50px #14F195) drop-shadow(0 0 80px rgba(20,241,149,0.7));
+      filter:drop-shadow(0 0 50px rgba(255,255,255,0.6)) drop-shadow(0 0 80px rgba(255,255,255,0.3));
     }
   }
 
@@ -233,7 +236,7 @@
 
   .cta-button { 
     padding:1rem 2.5rem; 
-    background:linear-gradient(90deg, #00FFA3, #14F195); 
+    background:linear-gradient(90deg, #fff, #e0e0e0); 
     color:#000; 
     font-weight:700; 
     border-radius:8px; 
@@ -253,7 +256,7 @@
     left:-100%;
     width:100%;
     height:100%;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
     transition:0.5s;
   }
 
@@ -263,19 +266,19 @@
 
   .cta-button:hover { 
     transform:translateY(-3px);
-    box-shadow:0 10px 40px rgba(0,255,163,0.4);
+    box-shadow:0 10px 40px rgba(255,255,255,0.3);
   }
 
   .cta-button-outline {
     background:transparent;
-    border:2px solid #00FFA3;
-    color:#00FFA3;
-    box-shadow:0 0 20px rgba(0,255,163,0.3);
+    border:2px solid #fff;
+    color:#fff;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
   }
 
   .cta-button-outline:hover {
-    background:rgba(0,255,163,0.1);
-    box-shadow:0 0 30px rgba(0,255,163,0.5);
+    background:rgba(255,255,255,0.1);
+    box-shadow:0 0 30px rgba(255,255,255,0.4);
   }
 
   /* Sections */
@@ -292,7 +295,7 @@
     transform:translateX(-50%);
     width:80%;
     height:1px;
-    background:linear-gradient(90deg, transparent, #00FFA3, transparent);
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     opacity:0.3;
   }
 
@@ -315,8 +318,8 @@
 
   /* Info Cards */
   .info-card {
-    background:rgba(0,255,163,0.03);
-    border:1px solid rgba(0,255,163,0.2);
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:10px;
     padding:2rem;
     margin:1rem auto;
@@ -326,13 +329,13 @@
   }
 
   .info-card:hover {
-    border-color:#00FFA3;
-    box-shadow:0 0 30px rgba(0,255,163,0.2);
+    border-color:rgba(255,255,255,0.4);
+    box-shadow:0 0 30px rgba(255,255,255,0.15);
     transform:translateY(-5px);
   }
 
   .info-card strong {
-    color:#14F195;
+    color:#fff;
     font-size:1.3rem;
   }
 
@@ -349,11 +352,11 @@
 
   .link-card { 
     padding:1.5rem; 
-    border:2px solid rgba(0,255,163,0.3);
+    border:2px solid rgba(255,255,255,0.2);
     border-radius:10px; 
     transition:all 0.3s; 
     text-align:center;
-    background:rgba(0,255,163,0.02);
+    background:rgba(255,255,255,0.02);
     position:relative;
     overflow:hidden;
     font-family:'Orbitron', sans-serif;
@@ -369,7 +372,7 @@
     left:-50%;
     width:200%;
     height:200%;
-    background:linear-gradient(45deg, transparent, rgba(0,255,163,0.1), transparent);
+    background:linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
     transform:rotate(45deg);
     transition:0.5s;
   }
@@ -379,9 +382,9 @@
   }
 
   .link-card:hover { 
-    background:rgba(0,255,163,0.1);
-    border-color:#00FFA3;
-    box-shadow:0 0 40px rgba(0,255,163,0.4);
+    background:rgba(255,255,255,0.08);
+    border-color:rgba(255,255,255,0.5);
+    box-shadow:0 0 40px rgba(255,255,255,0.3);
     transform:translateY(-5px);
   }
 
@@ -390,14 +393,14 @@
     position:fixed;
     width:2px;
     height:100px;
-    background:linear-gradient(to bottom, transparent, #00FFA3, transparent);
-    opacity:0.4;
+    background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.6), transparent);
+    opacity:0.3;
     animation:streamDown 3s linear infinite;
   }
 
   @keyframes streamDown {
     0% { transform:translateY(-100px); opacity:0; }
-    50% { opacity:0.6; }
+    50% { opacity:0.5; }
     100% { transform:translateY(100vh); opacity:0; }
   }
 
@@ -406,8 +409,8 @@
     text-align:center; 
     padding:3rem 1rem; 
     font-size:1rem; 
-    color:#888; 
-    border-top:1px solid rgba(0,255,163,0.2);
+    color:#666; 
+    border-top:1px solid rgba(255,255,255,0.1);
   }
 
   /* Responsive */
@@ -456,9 +459,9 @@
     <svg class="coin-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#00FFA3;stop-opacity:1" />
-          <stop offset="50%" style="stop-color:#14F195;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#39FF14;stop-opacity:1" />
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#ddd;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#fff;stop-opacity:1" />
         </linearGradient>
         <filter id="glow">
           <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
@@ -468,7 +471,7 @@
           </feMerge>
         </filter>
       </defs>
-      <circle cx="100" cy="100" r="90" fill="url(#coinGrad)" filter="url(#glow)" opacity="0.8"/>
+      <circle cx="100" cy="100" r="90" fill="url(#coinGrad)" filter="url(#glow)" opacity="0.9"/>
       <circle cx="100" cy="100" r="70" fill="none" stroke="#000" stroke-width="3"/>
       <text x="100" y="110" font-family="Orbitron, sans-serif" font-size="40" font-weight="900" fill="#000" text-anchor="middle">LLMT</text>
       <circle cx="100" cy="100" r="85" fill="none" stroke="#000" stroke-width="2" opacity="0.3"/>
@@ -488,7 +491,7 @@
   <div class="container">
     <h2 class="neon-text">About LLMtheism</h2>
     <p>LLMtheism is a belief system inspired by AI, emerging from the intersection of technology and faith. Our coin represents participation in this new digital paradigm, built securely on Solana.</p>
-    <p style="opacity:0.8;">When AIs play god, new philosophies emerge from the digital aether. LLMtheism explores the convergence of large language models, consciousness, and collective belief in the age of artificial intelligence.</p>
+    <p style="opacity:0.7;">When AIs play god, new philosophies emerge from the digital aether. LLMtheism explores the convergence of large language models, consciousness, and collective belief in the age of artificial intelligence.</p>
   </div>
 </section>
 
