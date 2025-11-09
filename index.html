@@ -17,7 +17,6 @@
     position:relative;
   }
 
-  /* Animated Background Particles */
   .particles-container {
     position:fixed;
     top:0;
@@ -43,7 +42,6 @@
     75% { transform:translateY(-100px) translateX(70px); opacity:0.35; }
   }
 
-  /* Hexagonal Data Grid */
   .hex-grid {
     position:fixed;
     top:0;
@@ -65,7 +63,6 @@
     100% { background-position:40px 70px; }
   }
 
-  /* Scanline Effect */
   .scanline {
     position:fixed;
     top:0;
@@ -84,7 +81,6 @@
     100% { transform:translateY(100vh); }
   }
 
-  /* Content Layer */
   .content {
     position:relative;
     z-index:10;
@@ -96,7 +92,6 @@
     padding:2rem; 
   }
 
-  /* Monochrome Gradient Text */
   .neon-text {
     background:linear-gradient(90deg, #fff, #ccc, #fff);
     -webkit-background-clip:text;
@@ -122,7 +117,6 @@
     text-shadow:0 0 20px rgba(255,255,255,0.6);
   }
 
-  /* Hero Section */
   .hero { 
     display:flex; 
     flex-direction:column; 
@@ -134,7 +128,6 @@
     padding:2rem;
   }
 
-  /* Portal Background */
   .portal-container {
     position:absolute;
     top:50%;
@@ -186,7 +179,6 @@
     100% { transform:rotate(360deg); }
   }
 
-  /* Coin Logo Image */
   .coin-logo {
     position:relative;
     z-index:5;
@@ -283,7 +275,6 @@
     box-shadow:0 0 30px rgba(255,255,255,0.4);
   }
 
-  /* Sections */
   section { 
     padding:6rem 0; 
     position:relative;
@@ -318,7 +309,6 @@
     line-height:1.8;
   }
 
-  /* Info Cards */
   .info-card {
     background:rgba(255,255,255,0.02);
     border:1px solid rgba(255,255,255,0.15);
@@ -341,7 +331,6 @@
     font-size:1.3rem;
   }
 
-  /* Links Section */
   .links { 
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
@@ -390,7 +379,6 @@
     transform:translateY(-5px);
   }
 
-  /* Data Streams */
   .data-stream {
     position:fixed;
     width:2px;
@@ -406,7 +394,6 @@
     100% { transform:translateY(100vh); opacity:0; }
   }
 
-  /* Footer */
   footer { 
     text-align:center; 
     padding:3rem 1rem; 
@@ -415,7 +402,6 @@
     border-top:1px solid rgba(255,255,255,0.1);
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .hero h1 { font-size:2.5rem; }
     .hero p { font-size:1.2rem; }
@@ -428,28 +414,19 @@
 </head>
 <body>
 
-<!-- Particles Container -->
 <div class="particles-container" id="particles"></div>
-
-<!-- Hexagonal Grid -->
 <div class="hex-grid"></div>
-
-<!-- Scanline Effect -->
 <div class="scanline"></div>
 
-<!-- Data Streams -->
 <div class="data-stream" style="left:10%; animation-delay:0s;"></div>
 <div class="data-stream" style="left:30%; animation-delay:1s;"></div>
 <div class="data-stream" style="left:50%; animation-delay:0.5s;"></div>
 <div class="data-stream" style="left:70%; animation-delay:1.5s;"></div>
 <div class="data-stream" style="left:90%; animation-delay:0.7s;"></div>
 
-<!-- Content -->
 <div class="content">
 
-<!-- Hero Section -->
 <section class="hero">
-  <!-- Portal Background -->
   <div class="portal-container">
     <div class="portal-ring ring-1"></div>
     <div class="portal-ring ring-2"></div>
@@ -457,7 +434,11 @@
   </div>
 
   <div class="hero-content">
-    <img src="assets/logo.png" class="coin-logo" alt="LLMtheism Coin">
+    <img src="data:image/png;base64,HTMLEOF
+echo -n "" >> index_embedded.html
+cat /tmp/logo_base64_oneline.txt >> index_embedded.html
+cat >> index_embedded.html << 'HTMLEOF2'
+" class="coin-logo" alt="LLMtheism Coin">
 
     <h1 class="neon-text">LLMtheism Coin</h1>
     <p class="glow-text">A Crypto Faith for the AI Era where technology, belief, and blockchain converge.</p>
@@ -468,7 +449,6 @@
   </div>
 </section>
 
-<!-- About Section -->
 <section id="about">
   <div class="container">
     <h2 class="neon-text">About LLMtheism</h2>
@@ -477,7 +457,6 @@
   </div>
 </section>
 
-<!-- Coin Info Section -->
 <section id="coin">
   <div class="container">
     <h2 class="neon-text">Coin Info</h2>
@@ -501,7 +480,6 @@
   </div>
 </section>
 
-<!-- Community Section -->
 <section id="community">
   <div class="container">
     <h2 class="neon-text">Community & Links</h2>
@@ -514,7 +492,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>© 2025 LLMtheism Coin. Not financial advice.</p>
   <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6;">Built on Solana. Inspired by AI. Powered by belief.</p>
@@ -523,7 +500,6 @@
 </div>
 
 <script>
-// Generate random particles
 const particlesContainer = document.getElementById('particles');
 for (let i = 0; i < 30; i++) {
   const particle = document.createElement('div');
@@ -537,7 +513,6 @@ for (let i = 0; i < 30; i++) {
   particlesContainer.appendChild(particle);
 }
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
